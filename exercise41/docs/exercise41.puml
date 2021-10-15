@@ -6,7 +6,7 @@ SortNames application = new SortNames()
 }
 
 class SortNames {
-+void scanInputFile()
++void scanInputFile(): List<String>
 +void sortList(unsortedList: List<String>)
 +void printToOutputFile(sortedList: List<String>)
 }
