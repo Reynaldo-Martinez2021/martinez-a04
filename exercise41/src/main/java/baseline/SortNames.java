@@ -39,7 +39,6 @@ public class SortNames {
     public void sortList(List<String> unsortedList){
         //use the collections sort lib to sort array
         Collections.sort(unsortedList);
-
     }
 
     //create a function to print out the correct output
