@@ -1,6 +1,7 @@
 package baseline;
 
 import java.io.FileNotFoundException;
+import java.util.List;
 
 public class Solution41 {
     /*
@@ -34,17 +35,13 @@ public class Solution41 {
         SortNames application = new SortNames();
         //call the scanInputFile inside try catch
         try {
-            application.scanInputFile();
-            //catch the fileNotFoundException and print reason
-        } catch (FileNotFoundException e) {
-            System.out.print("Could not find exercise41_input.txt");
-        }
-        //call the printToOutputFile within try catch block
-        try {
-            application.printToOutputFile();
+            //create a list to store list
+            List<String> txtFileNames = application.scanInputFile();
+            //call the printToOutput with txtFileNames
+            application.printToOutputFile(txtFileNames);
         } catch (FileNotFoundException e) {
             //catch the fileNotFoundException and print reason
-            System.out.print("Could not open exercise41_output.txt");
+            System.out.print(e);
         }
     }
 }

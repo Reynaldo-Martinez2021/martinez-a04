@@ -15,12 +15,11 @@ public class SortNames {
      * Copyright 2021 Reynaldo Martinez
      */
 
-    //create a list<String>
-    private final List<String> names = new ArrayList<>();
-
     //create a function to scan the input file and fill up the array
     //function will throw Exceptions and main will handle catching
-    public void scanInputFile() throws FileNotFoundException{
+    public List<String> scanInputFile() throws FileNotFoundException{
+        //create a list<String>
+        List<String> names = new ArrayList<>();
         //create a filename to point to text file
         String fileName = "data/exercise41_input.txt";
         //create try block with scanner inside
@@ -31,19 +30,21 @@ public class SortNames {
                 names.add(input.nextLine());
             }
             //call the sortList function to alphabetically sort Arraylist
-            sortList();
+            sortList(names);
         }
+        return names;
     }
 
     //create a function to sort the arrays alphabetically
-    public void sortList(){
+    public void sortList(List<String> unsortedList){
         //use the collections sort lib to sort array
-        Collections.sort(names);
+        Collections.sort(unsortedList);
+
     }
 
     //create a function to print out the correct output
     //function will throw Exceptions and main will handle catching
-    public void printToOutputFile() throws FileNotFoundException{
+    public void printToOutputFile(List<String> sortedNames) throws FileNotFoundException{
         //create a file name in the correct folder 'data'
         File file = new File("data/exercise41_output.txt");
         //initialize the print Stream
@@ -51,9 +52,9 @@ public class SortNames {
         //set the Sys out to stream
         System.setOut(stream);
         //create the print for total names using list size
-        System.out.printf("Total of %d names%n-----------------%n", names.size());
+        System.out.printf("Total of %d names%n-----------------%n", sortedNames.size());
         //create a for loop to print each element in its own line
-        for(String element: names)
+        for(String element: sortedNames)
             System.out.println(element);
     }
 }

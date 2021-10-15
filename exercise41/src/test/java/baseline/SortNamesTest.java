@@ -19,7 +19,7 @@ class SortNamesTest {
      */
 
     @Test
-    void testScanTxtFile() {
+    void scanInputFile() {
         //create an array to avoid repeating .add() of the inputTxtFile of names
         String[] unsortedArray = {
                 "Ling, Mai",
@@ -54,7 +54,7 @@ class SortNamesTest {
     }
 
     @Test
-    void testScanInputException(){
+    void scanInputFileException(){
         //create a fake file name
         String fileName = "data/thisSucks.txt";
         //assertThrows using a lambda

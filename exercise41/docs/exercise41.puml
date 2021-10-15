@@ -8,8 +8,8 @@ SortNames application = new SortNames()
 class SortNames {
 -List<String> names
 +void scanInputFile()
-+void sortList()
-+void printToOutputFile()
++void sortList(unsortedList: List<String>)
++void printToOutputFile(sortedList: List<String>)
 }
 
 Solution41 - SortNames
