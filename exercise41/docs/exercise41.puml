@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Solution41{
+SortNames application = new SortNames()
+}
+
+class SortNames {
+-List<String> names
++void scanInputFile()
++void sortList()
++void printToOutputFile()
+}
+
+Solution41 -> SortNames
+
+@enduml
