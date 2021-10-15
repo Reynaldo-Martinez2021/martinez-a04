@@ -12,6 +12,6 @@ class SortNames {
 +void printToOutputFile()
 }
 
-Solution41 -> SortNames
+Solution41 - SortNames
 
 @enduml

@@ -1,5 +1,7 @@
 package baseline;
 
+import java.io.FileNotFoundException;
+
 public class Solution41 {
     /*
      * UCF COP3330 Fall 2021 Assignment 4 Solutions
@@ -29,7 +31,20 @@ public class Solution41 {
 
     public static void main(String[] args){
         //create an application of SortNames
-        //call the scanInputFile
-        //call the printToOutputFile
+        SortNames application = new SortNames();
+        //call the scanInputFile inside try catch
+        try {
+            application.scanInputFile();
+            //catch the fileNotFoundException and print reason
+        } catch (FileNotFoundException e) {
+            System.out.print("Could not find exercise41_input.txt");
+        }
+        //call the printToOutputFile within try catch block
+        try {
+            application.printToOutputFile();
+        } catch (FileNotFoundException e) {
+            //catch the fileNotFoundException and print reason
+            System.out.print("Could not open exercise41_output.txt");
+        }
     }
 }
