@@ -10,7 +10,6 @@ public class ParseTextFile {
     /*
      * UCF COP3330 Fall 2021 Assignment 4 Solutions
      * Copyright 2021 Reynaldo Martinez
-     *
      */
 
     //create a function to scan the input file and fill up List then returns it
