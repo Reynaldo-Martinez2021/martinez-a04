@@ -1,5 +1,8 @@
 package baseline;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.List;
 
 public class Solution42 {
@@ -27,21 +30,38 @@ public class Solution42 {
 
     public static void main(String[] args){
         //create an application of the class
+        Solution42 application = new Solution42();
         //create an application of ParseTextFile
-
+        ParseTextFile parser = new ParseTextFile();
         //create a list for employeeData
+        List<String> employeeData;
         //call scanInputFile and save value to created list
+        employeeData = parser.parseInputFile();
         //call the printToOutputFile
+        application.printToOutputFile(employeeData);
     }
 
     //create a function to print to the output file
     public void printToOutputFile(List<String> data){
         //create a file name in the correct folder 'data'
-        //init print stream with try catch block
-
-        //set the sys out to the stream
-        //use the string formatting "%-10s" for the table results
-        //print out the dashed line
-        //use list loop to print every element
+        File file = new File("data/exercise42_output.txt");
+        //init print stream with try block
+        try(PrintStream stream = new PrintStream(file)){
+            //set the sys out to the stream
+            System.setOut(stream);
+            //use the string formatting for the table results
+            System.out.printf("%-10s%-10s%s%n", "Last", "First", "Salary");
+            //print out the dashed line
+            System.out.print("--------------------------\n");
+            //create a for loop to print every element with format
+            for(String element: data){
+                if(element.contains("\n"))
+                    System.out.print(element);
+                else
+                    System.out.printf("%-10s", element);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }

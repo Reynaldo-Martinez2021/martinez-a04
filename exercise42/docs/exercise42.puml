@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Solution42{
+-printToOutputFile(data: List<String>)
+}
+
+class ParseTextFile{
++parseInputFile(): List<String>
+}
+
+Solution42 -> ParseTextFile
+
+@enduml
