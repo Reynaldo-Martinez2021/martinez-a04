@@ -41,7 +41,7 @@ public class Solution41 {
             application.printToOutputFile(txtFileNames);
         } catch (FileNotFoundException e) {
             //catch the fileNotFoundException and print reason
-            System.out.print(e);
+            e.printStackTrace();
         }
     }
 }
