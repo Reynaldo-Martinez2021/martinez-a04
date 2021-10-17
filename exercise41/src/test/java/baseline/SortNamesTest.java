@@ -1,9 +1,15 @@
 package baseline;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -100,5 +106,42 @@ class SortNamesTest {
         Collections.sort(actualSortedList);
         //assertEquals expected vs actual
         assertEquals(expectedSortedList, actualSortedList);
+    }
+
+    @Test
+    void outputFileCreated(){
+        //check to see if file was created
+        File file = new File("data/exercise41_output.txt");
+        //use assertTrue to test it
+        Assertions.assertTrue(file.exists());
+    }
+
+    @Test
+    void checkOutputContents(){
+        //check to see if the contents of file are correct
+        String expectedOutput = """
+                Total of 7 names
+                -----------------
+                Johnson, Jim
+                Jones, Aaron
+                Jones, Chris
+                Ling, Mai
+                Swift, Geoffrey
+                Xiong, Fong
+                Zarnecki, Sabrina
+                """;
+        //create a string to hold path
+        String path = "data/exercise41_output.txt";
+        //surround readString with a try catch
+        try {
+            //create a string from the output file
+            String actualOutput = Files.readString(Path.of(path), StandardCharsets.UTF_8);
+            //get rid of the \r in the CRLF
+            actualOutput = actualOutput.replaceAll("\r","");
+            //create an assertEquals
+            assertEquals(expectedOutput, actualOutput);
+        } catch (IOException e) {
+            System.out.print("File does not exist");
+        }
     }
 }
