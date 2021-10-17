@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class Solution45{
+
+}
+
+Class ProcessTxtFile{
++openFiles()
+-getFileName():String
++modifyNewFile(String)
+}
+
+Solution45..>ProcessTxtFile
+
+@enduml

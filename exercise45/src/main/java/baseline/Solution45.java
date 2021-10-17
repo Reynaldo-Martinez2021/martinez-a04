@@ -20,6 +20,8 @@ public class Solution45 {
 
     public static void main(String[] args){
         //create an instance of ProcessTxtFiles
+        ProcessTxtFiles application = new ProcessTxtFiles();
         //call the openFiles function which will modify the files
+        application.openFiles();
     }
 }
