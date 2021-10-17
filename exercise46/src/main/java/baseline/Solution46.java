@@ -22,6 +22,8 @@ public class Solution46 {
 
     public static void main(String[] args) {
         //create an instance of wordFrequency
+        WordFrequency application = new WordFrequency();
         //call the readTxtFile function
+        application.txtFileToMap();
     }
 }

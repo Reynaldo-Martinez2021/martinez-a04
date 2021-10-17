@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class Solution46{
+}
+
+Class WordFrequency{
++txtFileMap()
++sortByValue(Map<String, Integer>): Map<String, Integer>
++consoleOutput(Map<String, Integer>)
+}
+Solution46 ..> WordFrequency
+
+@enduml
