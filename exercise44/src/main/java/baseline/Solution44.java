@@ -21,10 +21,8 @@ public class Solution44 {
 
     public static void main(String[] args) {
         //create instance of productSearch
+        ProductSearch application = new ProductSearch();
         //call the processConsoleInput function
+        application.processConsoleInput();
     }
 }
-
-
-
-
