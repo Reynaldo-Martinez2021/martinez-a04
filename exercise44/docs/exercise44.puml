@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class Solution44{
+
+}
+
+Class ProductSearch{
+-HashMap<Integer,Product> hashMap
+-Scanner input
++processConsoleInput()
++productSearch(String): boolean
++parseJsonFile()
++fillHashMap(JsonArray)
+}
+
+Class Product{
+-String: productName
+-double: price
+-int: quantity
++getProductName(): productName
++setProductName(String)
++getPrice(): price
++setPrice(double)
++getQuantity(): quantity
++setQuantity(int)
+}
+
+Solution44 ..>ProductSearch
+ProductSearch-->"*"Product
+
+@enduml
