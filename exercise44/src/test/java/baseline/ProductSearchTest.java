@@ -15,8 +15,7 @@ import java.io.Reader;
 import java.util.HashMap;
 import java.util.Locale;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ProductSearchTest {
 
@@ -33,7 +32,19 @@ class ProductSearchTest {
     }
 
     @Test
-        //create a boolean function that will take in a string and check it against hashmap
+    void testConsoleValidation(){
+        //create a boolean variable
+        boolean testing = true;
+        //create a userString
+        String userInput = " ";
+        //create if statement to make sure input is valid
+        if(userInput.matches("^[A-Za-z ]*$") && !userInput.isBlank())
+            //set bool to false
+            testing = false;
+        assertTrue(testing);
+    }
+
+    @Test
     void productSearch(){
         //create a testing hashMap to check if my loop works
         HashMap<Integer, Product> expectedHashMap = new HashMap<>();
