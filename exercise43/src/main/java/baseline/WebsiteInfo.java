@@ -1,7 +1,6 @@
 package baseline;
 
 public class WebsiteInfo {
-
     /*
      * UCF COP3330 Fall 2021 Assignment 4 Solutions
      * Copyright 2021 Reynaldo Martinez
@@ -16,7 +15,9 @@ public class WebsiteInfo {
         return nameOfWebsite;
     }
 
-    public void setNameOfWebsite(String nameOfWebsite) { this.nameOfWebsite = nameOfWebsite; }
+    public void setNameOfWebsite(String nameOfWebsite) {
+        this.nameOfWebsite = nameOfWebsite;
+    }
 
     public String getAuthorName() {
         return authorName;
@@ -31,7 +32,7 @@ public class WebsiteInfo {
     }
 
     public void setWantsCssFolder(String cssFolder) {
-
+        this.wantsCssFolder = cssFolder.contains("y") || cssFolder.contains("Y");
     }
 
     public boolean getJavascriptAnswer() {
@@ -40,7 +41,6 @@ public class WebsiteInfo {
 
     //take in a string and check if string is y or no
     public void setJavascriptFolder(String javascriptFolder) {
-
+        this.wantsJavaScriptFolder = javascriptFolder.contains("y") || javascriptFolder.contains("Y");
     }
-
 }

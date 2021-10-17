@@ -1,0 +1,41 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class Solution43{
+-Scanner: input
++validateConsoleInput(String):String
+}
+
+Class WebsiteGenerator{
+-Path: dataPath
++createFolder(Path): boolean
++createNewFile(Path): File
++createWebsiteSkeleton(WebsiteInfo)
++createWebsiteFolder()
++createUserWebsiteFolder(WebsiteInfo)
++createIndexHtmlFile(WebsiteInfo)
++createJavascriptFolder(WebsiteInfo)
++createCssFolder(WebsiteInfo
++printToConsole(Path)
+}
+
+Class WebsiteInfo{
+-String: nameOfWebsite
+-String: authorName
+-boolean: wantsCssFolder
+-boolean: wantsJavaScriptFolder
++getNameOfWebsite(): String
++setNameOfWebsite(String)
++getAuthorName(): String
++setAuthorName(String authorName)
++getCssAnswer(): boolean
++setWantsCssFolder(String)
++getJavascriptAnswer(): boolean
++setJavaScriptAnswer(String)
+}
+
+Solution43 --> WebsiteInfo
+WebsiteGenerator --> WebsiteInfo
+Solution43 ..> WebsiteGenerator
+
+@enduml

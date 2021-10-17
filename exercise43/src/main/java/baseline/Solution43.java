@@ -24,26 +24,46 @@ public class Solution43 {
 
     public static void main(String[] args){
         //create an instance of Solution43
+        Solution43 app = new Solution43();
         //create an instance of WebsiteInfo
+        WebsiteInfo userInfo = new WebsiteInfo();
         //create an instance of websiteGenerator
+        WebsiteGenerator generate = new WebsiteGenerator();
         //call the get ConsoleInput
+        userInfo.setNameOfWebsite(app.validateConsoleInput("Enter site name: "));
         //call the getConsoleInput and set the name of author
+        userInfo.setAuthorName(app.validateConsoleInput("Enter the author name: "));
         //call getConsoleInput and ask user if they want javascript folder
+        userInfo.setJavascriptFolder(app.validateConsoleInput("Do you want a folder for JavaScript? "));
         //call getConsoleInput and ask user if they want a css folder
+        userInfo.setWantsCssFolder(app.validateConsoleInput("Do you want a folder for CSS? "));
         //call the website skeleton method
+        generate.createWebsiteSkeleton(userInfo);
     }
 
     //create a function that returns string output
     public String validateConsoleInput(String prompt){
         //create a variable for do while loop
+        boolean catchVariable = false;
         //create a testing string
+        String testing;
         //create a do while loop to test for correct input
+        do{
             //create a sys out
+            System.out.print(prompt);
             //save the input to a testing string
+            testing = input.nextLine();
             //check if the userInput is within the regex
+            if(testing.matches("^[A-Za-z0-9 ]*$") && !testing.isBlank()){
                 //if it is then set catchVariable to true
+                catchVariable = true;
+            }else{
                 //if not print out not a valid input
+                System.out.print("Not a valid input. Only letters and numbers.\n");
+            }
+        }while(!catchVariable);
         //return the string
-        return null;
+        return testing;
     }
+
 }
