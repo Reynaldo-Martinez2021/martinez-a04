@@ -18,6 +18,10 @@ import java.util.Locale;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProductSearchTest {
+    /*
+     *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+     *  Copyright 2021 Reynaldo Martinez
+     */
 
     //create a product function to fill hashMap
     //pass parameters to function
