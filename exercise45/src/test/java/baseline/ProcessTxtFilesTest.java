@@ -11,6 +11,10 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProcessTxtFilesTest {
+    /*
+     *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+     *  Copyright 2021 Reynaldo Martinez
+     */
 
     @Test
     void testFileName(){
